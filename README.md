@@ -2,23 +2,43 @@
 SDP Final Project
 Created by Ilya Shelestov and Amirkhan Ilyassov
 
-Our Project idea is a **Restaurant**. In this project, we have implemented 6 Design Patterns: Strategy, Decorator, Singleton, Adapter, Factory method and Observer.
+Our Project idea is a **SmartRestaurant Management System**.
+
+**Overview**
+The SmartRestaurant Management System is a Java-based application that simulates the management operations of a restaurant. It utilizes various design patterns to enhance modularity, extensibility, and maintainability of the codebase. The implemented design patterns include Singleton, Decorator, Adapter, Factory Method, Observer, and Strategy.
 
 **Design Patterns Overview**
-1. Singleton Pattern
-The RestaurantManager class is implemented using the Singleton pattern to ensure a single instance controls the entire restaurant. This ensures centralized management and access to critical resources.
 
-2. Decorator Pattern
-The Decorator pattern is applied to menu items, allowing customers to customize their orders with add-ons and modifications. Additional features such as CheeseDecorator and VegetableDecorator can be dynamically added to menu items.
+1. **Singleton Pattern**
+The Singleton pattern is implemented in the **RestaurantManager** class of the SmartRestaurant Management System. The class ensures that only one instance of the manager exists throughout the system. The private constructor prevents external instantiation, and the **getInstance** method provides access to the single instance. This guarantees centralized control over resources such as customer data, payment strategies, and notifications, enhancing overall system coherence and efficiency.
 
-3. Adapter Pattern
-The Adapter pattern integrates various payment gateways into the billing system. Adapters are created for payment gateways like PayPal and Credit Card to make them compatible with the existing billing system.
+2. **Decorator Pattern**
+The Decorator pattern is utilized to dynamically modify the cost and description of menu items in the SmartRestaurant Management System. The **DishesDecorator** abstract class implements the Cuisine interface, providing a base decorator structure. Concrete decorators, such as **Besbarmak**, **Borsch**, **Kespe**, **Okroshka**, **Pasta**, and **Pizza**, extend **DishesDecorator** to add specific dishes to the base **Cuisine**. Each decorator contributes to the final cost and description of the menu item, allowing customers to customize their orders with additional dishes.
 
-4. Factory Method Pattern
-The Factory Method pattern is employed to create different cuisines with specialized cooking procedures. Concrete factories such as ItalianCuisineFactory and ChineseCuisineFactory create specific dishes like Pizza, Pasta, and Dumplings.
+3. **Adapter Pattern**
+The Adapter pattern is used to handle different currencies during the payment process. Users choose between dollars and tenge. If tenge is selected, the **TengeCurrencyAdapter** seamlessly converts the currency amount from dollars to tenge. This adaptation ensures compatibility between the existing **DollarsCurrency** class and the rest of the payment system, promoting flexibility for future currency additions with minimal code changes.
 
-5. Observer Pattern
-The Observer pattern is implemented to notify customers waiting for a table. Customers act as observers, and the TableManager class serves as a subject, notifying waiting customers when a table becomes available.
+4. **Factory Method Pattern**
+The Factory Method pattern is employed in the SmartRestaurant Management System to create different types of cuisines dynamically. The **CuisineFactory** abstract class serves as the base factory, providing a common interface for creating cuisines. Concrete factories, such as **ItalianCuisineCreator**, **KazakhCuisineCreator**, and **RussianCuisineCreator**, extend **CuisineFactory**. Each concrete factory overrides the **createCuisine** method to instantiate a specific type of cuisine, such as **ItalianCuisine**, **KazakhCuisine**, or **RussianCuisine**.
 
-6. Strategy Pattern
-The Strategy pattern is applied in the discount system, where different discount strategies (e.g., PercentageDiscount, FixedAmountDiscount) can be dynamically switched based on customer type or ongoing promotions.
+5. **Observer Pattern**
+The Observer pattern is implemented to notify customers who have subscribed to notifications. In this system, customers act as observers. Customers subscribe to notifications and are notified when an event happening or amount of available tables. The Observer pattern ensures that only interested customers receive updates, enhancing the efficiency of the waiting system.
+
+6. **Strategy Pattern**
+The Strategy pattern in the SmartRestaurant Management System enables customers to dynamically choose their payment method. When prompted, users select between Kaspi and Steam. The chosen payment strategy, either **PayByKaspi** or **PayBySteam**, is then employed to execute the payment operation. This design allows for easy expansion of payment options in the future, enhancing system flexibility.
+
+
+**Usage**
+
+**Administrator Mode**
+Add, remove, or view customers.
+Add or remove customers with notifications.
+Send messages to customers.
+
+**Customer Mode**
+Enter personal details.
+Choose to receive notifications.
+Select a cuisine (Kazakh, Russian, Italian).
+Customize the order with the Decorator pattern.
+Choose the payment currency with the Adapter pattern.
+Select the payment method with the Strategy pattern.
