@@ -31,14 +31,14 @@ The Strategy pattern in the SmartRestaurant Management System enables customers 
 **Usage**
 
 **Administrator Mode**
-Add, remove, or view customers.
-Add or remove customers with notifications.
-Send messages to customers.
+1. Add, remove, or view customers.
+2. Add or remove customers with notifications.
+3. Send messages to customers.
 
 **Customer Mode**
-Enter personal details.
-Choose to receive notifications.
-Select a cuisine (Kazakh, Russian, Italian).
-Customize the order with the Decorator pattern.
-Choose the payment currency with the Adapter pattern.
-Select the payment method with the Strategy pattern.
+1. Enter personal details.
+2. Choose to receive notifications.
+3. Select a cuisine (Kazakh, Russian, Italian).
+4. Customize the order with the Decorator pattern.
+5. Choose the payment currency with the Adapter pattern.
+6. Select the payment method with the Strategy pattern.
