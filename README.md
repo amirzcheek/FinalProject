@@ -1,5 +1,5 @@
-**# SDP-FinalProject
-SDP Final Project**
+# SDP-FinalProject
+SDP Final Project
 Created by **Ilya Shelestov** and **Amirkhan Ilyassov**
 
 Our Project idea is a **SmartRestaurant Management System**.
